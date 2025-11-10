@@ -108,7 +108,7 @@ if __name__ == '__main__':
 The backend comes with a comprehensive test suite using `pytest`. To run the tests, first install the dependencies:
 
 ```bash
-pip install pytest joblib numpy
+pip install pytest 
 ```
 
 Then, from the root of the project, simply run:
