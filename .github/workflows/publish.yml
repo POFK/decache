@@ -1,6 +1,8 @@
 on:
   release:
-    types: [published]
+    tags:
+      - 'v*' # Triggers on tags like v1.0, v1.0.1, etc.
+      - 'release-*' # Triggers on tags like release-2025-11-08
 
 jobs:
   pypi-publish:
