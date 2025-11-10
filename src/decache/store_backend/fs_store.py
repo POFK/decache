@@ -38,7 +38,8 @@ class ContentAddressableStoreBackend(FileSystemStoreBackend):
 
     def _replace_large_arrays(self, item):
         """
-        Recursively traverse the item and replace large NumPy arrays with NumpyBlobReference.
+        Recursively traverse the item and replace large NumPy arrays
+        with NumpyBlobReference.
         """
         if isinstance(item, np.ndarray) and item.nbytes > self.large_array_threshold:
             # 1. Compute the hash of the array content.
@@ -72,7 +73,8 @@ class ContentAddressableStoreBackend(FileSystemStoreBackend):
 
     def _reconstruct_large_arrays(self, item):
         """
-        Recursively traverse the item and reconstruct NumPy arrays from NumpyBlobReference.
+        Recursively traverse the item and reconstruct NumPy arrays from
+        NumpyBlobReference.
         """
         if isinstance(item, NumpyBlobReference):
             # 1. Locate the blob file.
@@ -87,7 +89,8 @@ class ContentAddressableStoreBackend(FileSystemStoreBackend):
             mmap_mode = self.mmap_mode if hasattr(self, "mmap_mode") else None
             array = numpy_pickle.load(blob_filename, mmap_mode=mmap_mode)
 
-            # (Optional but recommended) Verify that the loaded array matches the metadata.
+            # (Optional but recommended) Verify that the loaded array matches
+            # the metadata.
             assert array.shape == item.shape
             assert array.dtype == item.dtype
 

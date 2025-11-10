@@ -2,7 +2,6 @@
 import pytest
 import joblib
 import numpy as np
-import shutil
 from pathlib import Path
 
 from decache.store_backend import register_cas_store_backend
