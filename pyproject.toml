@@ -2,7 +2,7 @@
 name = "decache"
 #version = "0.0.0"
 dynamic = ["version"]
-description = ""
+description = "A custom store backend for `joblib` that de-duplicates large NumPy arrays to save significant disk space in scientific computing and machine learning workflows."
 authors = [
     {name = "TX.Mao", email = "mtianxiang@gmail.com"},
 ]
@@ -152,8 +152,8 @@ test = "pytest tests --no-cov -m '(stone or stable or alpha)' "
 lint = "pdm run pre-commit run --all-files"
 
 
-[tool.pdm.options]
-build = ["--no-sdist", "-v"]
+#[tool.pdm.options]
+#build = ["--no-sdist", "-v"]
 
 [tool.pdm.version]
 source = "scm"
