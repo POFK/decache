@@ -1,5 +1,5 @@
 on:
-  push:
+  release:
     tags:
       - "v*" # Triggers on tags like v1.0, v1.0.1, etc.
       - "release-*" # Triggers on tags like release-2025-11-08
