@@ -1,7 +1,6 @@
 on:
   release:
-    tags:
-      types: [published]
+    types: [published]
 
 jobs:
   pypi-publish:
