@@ -8,13 +8,12 @@ authors = [
 ]
 dependencies = [
     "loguru>=0.7.0",
+    "joblib>=1.5.2",
+    "numpy>=2.3.4",
 ]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "MIT"}
-
-[project.scripts]
-
 
 [dependency-groups]
 dev = [
@@ -23,6 +22,7 @@ dev = [
     "radon>=5.1.0",
     "pre-commit>=4.2.0",
     "detect-secrets>=1.5.0",
+    "ipython>=9.7.0",
 ]
 
 test = [
@@ -104,7 +104,7 @@ addopts = [
     "--cov-append",           # 追加覆盖率数据，对于并行测试或多次运行很有用
     "--cov-report=term-missing", # 在终端显示覆盖率报告，并高亮未覆盖的行
     "--html=htmlcov/report.html", # 生成 HTML 格式的测试报告
-    "-n=auto",                # 自动根据 CPU 核心数并行执行测试 (来自 pytest-xdist)
+    "-n=4",                # 自动根据 CPU 核心数并行执行测试 (来自 pytest-xdist)
     "--color=yes",            # 强制输出彩色日志
 ]
 
